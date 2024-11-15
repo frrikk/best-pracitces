@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      padding: {
+        "container-desktop": "p-8",
+        "container-mobile": "p-4",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
