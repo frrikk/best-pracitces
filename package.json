@@ -7,10 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate:api": "docker run --rm -v $(pwd):/local openapitools/openapi-generator-cli:v6.6.0 generate -i /local/src/data/db.yaml -g typescript-fetch -o /local/src/data/generated"
+    "generate:api": "docker run --rm -v $(pwd):/local openapitools/openapi-generator-cli:v6.6.0 generate -i /local/src/data/db.yaml -g typescript-fetch -o /local/src/data/generated",
+    "postinstall": "prisma generate",
+    "prisma-seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.15.3",
+    "@prisma/client": "^5.22.0",
     "@radix-ui/react-radio-group": "^1.2.1",
     "@tabler/icons-react": "^3.22.0",
     "axios": "^1.7.7",
@@ -35,7 +38,9 @@
     "eslint-config-next": "15.0.3",
     "openapi-typescript": "^7.4.3",
     "postcss": "^8",
+    "prisma": "^5.22.0",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.2",
     "typescript": "^5"
   }
 }

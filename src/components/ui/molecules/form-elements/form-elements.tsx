@@ -1,6 +1,6 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/atoms/radio-group";
 import { Label } from "@/components/ui/atoms/label";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils/cn";
 import { Input } from "@/components/ui/atoms/input";
 import { createContext, ReactNode, useContext } from "react";
 import { Button } from "@/components/ui/atoms/button";

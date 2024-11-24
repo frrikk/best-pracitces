@@ -1,10 +1,26 @@
-import { PetApi } from "@/data/generated/axios";
-
-const pet = new PetApi();
+import Page from "@/components/layout/page/page";
+import { routes } from "@/app/(routes)/routes";
+import Link from "next/link";
 
 export default async function Home() {
-  const { data } = await pet.findPetsByStatus("available");
-  const petName = data.map((i) => i.name);
-
-  return <div>{petName}</div>;
+  return (
+    <Page heading="Welcome">
+      {routes.map((route) => {
+        return (
+          <li key={route.id}>
+            <Link href={route.href}>{route.title}</Link>
+            {route.subRoutes && (
+              <ul>
+                {route.subRoutes.map((subRoute) => (
+                  <li key={subRoute.id}>
+                    <Link href={subRoute.href}>{subRoute.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        );
+      })}
+    </Page>
+  );
 }

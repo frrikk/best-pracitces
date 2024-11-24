@@ -1,6 +1,6 @@
 import { default as NextForm } from "next/form";
 import { HTMLAttributes } from "react";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils/cn";
 
 interface FormProps extends HTMLAttributes<HTMLFormElement> {
   action: (formData: FormData) => void | Promise<void>;
