@@ -1,9 +1,9 @@
 import { TodoForm } from "./(components)/form";
 import Page from "@/components/layout/page/page";
-import { API } from "@/utils/api";
+import { API } from "@/lib/utils/api";
 import { HTMLAttributes, ReactNode } from "react";
-import { FormSchemaType } from "@/app/form/next-form-actions/(components)/form-validation";
-import { cn } from "@/utils/cn";
+import { FormSchemaType } from "@/app/(routes)/form/next-form-actions/(components)/form-validation";
+import { cn } from "@/lib/utils/cn";
 
 export default async function NextFormActionPage() {
   const data = await API.GET({ url: `${process.env.NEXT_DB_URL}/form-data` });

@@ -1,6 +1,6 @@
 "use server";
 
-import { mutate } from "@/utils/api";
+import { mutate } from "@/lib/utils/api";
 import { revalidatePath } from "next/cache";
 
 /**
